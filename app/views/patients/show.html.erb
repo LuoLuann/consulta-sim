@@ -1,8 +1,22 @@
+<h1>Detalhes sobre o paciente</h1>
+<%= link_to "Home", root_path %>
+<p>Nome: <%= @patient.fullname %></p>
 
-<h1><%= @patient.fullname %></h1>
+<p>Data de nascimento: <%= @patient.date_of_birth %></p>
 
-<p><% @patient.date_of_birth %></p>
-<br>
-<p><% @patient.cpf %></p>
-<br>
-<p><% @patient.email %></p>
+<p>CPF: <%= @patient.cpf %></p>
+
+<p>Email: <%= @patient.email %></p>
+
+<div>
+    <ul>
+        <li>
+            <%= link_to "Edit", edit_patient_path(@patient) %>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <%= link_to "Voltar", :back, class: "btn btn-secondary" %>
+</div>
+
