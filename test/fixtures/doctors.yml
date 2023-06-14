@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fullname: MyString
+  cpf: MyString
+  email: MyString
+  specialty: MyString
+  crm: 1
+
+two:
+  fullname: MyString
+  cpf: MyString
+  email: MyString
+  specialty: MyString
+  crm: 1
