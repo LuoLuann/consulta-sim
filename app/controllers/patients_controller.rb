@@ -30,7 +30,6 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-
     if @patient.update(patient_params)
       redirect_to @patient
     else
@@ -38,9 +37,15 @@ class PatientsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @patient = Patient.find(params[:id])
+  #   @patient.destroy
+  #   redirect_to patient_path, status: :see_other
+  # end
+
   private
     def patient_params
-      params.require(:patient).permit(:fullname, :data_of_birth, :cpf, :email, address_attributes: [:cep, :city, :neighborhood, :street, :complement])
+      params.require(:patient).permit(:fullname, :date_of_birth, :cpf, :email, address_attributes: [:cep, :city, :neighborhood, :street, :complement])
     end
 
 end
