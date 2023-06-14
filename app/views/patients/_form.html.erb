@@ -31,9 +31,51 @@
         <% end %>
     </div>
     <br>
+
+    <%= form.fields_for :address, @patient.address do |address_form| %>
+        <div>
+            <%= address_form.label :cep %>
+            <%= address_form.text_field :cep, value: address_form.object&.cep || '' %>
+            <% address_form.object&.errors&.full_messages_for(:cep)&.each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <br>
+        <div>
+            <%= address_form.label :city %>
+            <%= address_form.text_field :city, value: address_form.object&.city || '' %>
+            <% address_form.object&.errors&.full_messages_for(:city)&.each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <br>
+        <div>
+            <%= address_form.label :neighborhood %>
+            <%= address_form.text_field :neighborhood, value: address_form.object&.neighborhood || '' %>
+            <% address_form.object&.errors&.full_messages_for(:neighborhood)&.each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <br>
+        <div>
+            <%= address_form.label :street %>
+            <%= address_form.text_field :street, value: address_form.object&.street || '' %>
+            <% address_form.object&.errors&.full_messages_for(:street)&.each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+        <br>
+        <div>
+            <%= address_form.label :next %>
+            <%= address_form.text_field :next, value: address_form.object&.next || '' %>
+            <% address_form.object&.errors&.full_messages_for(:next)&.each do |message| %>
+            <div><%= message %></div>
+            <% end %>
+        </div>
+    <% end %>
+
     <div>
         <%= link_to "Voltar", :back, class: "btn btn-secondary" %>
         <%= form.submit "Confirmar" %>
-
     </div>
 <% end %>

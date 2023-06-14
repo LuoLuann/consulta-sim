@@ -11,6 +11,7 @@ class PatientsController < ApplicationController
 
   def new
     @patient = Patient.new
+    @address = @patient.build_address
   end
 
   def create
@@ -26,6 +27,7 @@ class PatientsController < ApplicationController
 
   def edit
     @patient = Patient.find(params[:id])
+    @address = @patient.build_address
   end
 
   def update
@@ -45,7 +47,7 @@ class PatientsController < ApplicationController
 
   private
     def patient_params
-      params.require(:patient).permit(:fullname, :date_of_birth, :cpf, :email, address_attributes: [:cep, :city, :neighborhood, :street, :complement])
+      params.require(:patient).permit(:fullname, :date_of_birth, :cpf, :email, address_attributes: [:cep, :city, :neighborhood, :street, :next])
     end
 
 end
