@@ -19,6 +19,11 @@ class ConsultationsController < ApplicationController
     end
   end
 
+  def show
+    @patient = Patient.find(params[:patient_id])
+    @consultations = @patient.consultations
+  end
+
   private
   def consultation_params
     params.require(:consultation).permit(:patient_id, :doctor_id, :date, :time)
@@ -32,5 +37,3 @@ end
   # def update
   # end
 
-  # def show
-  # end

@@ -1,2 +1,35 @@
-<h1>Consultations#show</h1>
-<p>Find me in app/views/consultations/show.html.erb</p>
+<head>
+  <style>
+    <style>
+        .consultations-list {
+            margin-bottom: 20px;
+        }
+
+        .consultation-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .consultation-info {
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<h1> Listar Consultas</h1>
+<div class="consultations-list">
+  <% @consultations.each do |consultation| %>
+    <div class="consultation-item">
+      <p class="consultation-info">Médico: <%= consultation.doctor.fullname %></p>
+      <p class="consultation-info">Data: <%= consultation.date %></p>
+      <p class="consultation-info">Hora: <%= consultation.time.strftime('%H:%M') %></p>
+    </div>
+  <% end %>
+</div>
+
+
+
+<%= link_to "Voltar", root_path, class: "btn btn-secondary" %>
