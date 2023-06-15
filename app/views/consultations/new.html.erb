@@ -1,0 +1,29 @@
+<%= form_with model: [@patient, @consultation], url: patient_consultations_path(@patient) do |form| %>
+  <div>
+    <%= form.label :doctor_id %><br>
+    <%= form.collection_select :doctor_id, Doctor.all, :id, :fullname %>
+    <% form.object.errors.full_messages_for(:doctor_id).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+    <% form.object.errors.full_messages_for(:date).each do |message| %>
+            <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :time %><br>
+    <%= form.time_field :time %>
+    <% form.object.errors.full_messages_for(:time).each do |message| %>
+        <div><%= message %></div>
+    <% end %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit 'Salvar Consulta' %>
+  </div>
+<% end %>

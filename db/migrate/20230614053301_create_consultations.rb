@@ -4,7 +4,7 @@ class CreateConsultations < ActiveRecord::Migration[7.0]
       t.date :date
       t.time :time
       t.references :patient, foreign_key: true
-
+      t.references :doctor, foreign_key: true
       t.timestamps
     end
   end

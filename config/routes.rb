@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "home#index"
 
-  resources :patients
-
+  resources :patients do
+    resources :consultations
+  end
   resources :doctors
-
 end

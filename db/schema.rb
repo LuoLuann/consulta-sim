@@ -27,8 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_055052) do
     t.date "date"
     t.time "time"
     t.integer "patient_id"
+    t.integer "doctor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_consultations_on_doctor_id"
     t.index ["patient_id"], name: "index_consultations_on_patient_id"
   end
 
@@ -52,5 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_055052) do
   end
 
   add_foreign_key "addresses", "patients"
+  add_foreign_key "consultations", "doctors"
   add_foreign_key "consultations", "patients"
 end

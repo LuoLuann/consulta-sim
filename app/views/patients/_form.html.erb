@@ -1,6 +1,6 @@
 <%= form_with model: @patient do |form| %>
     <div>
-        <%= form.label :fullname %><br>
+        <%= form.label :fullname, "Nome completo" %><br>
         <%= form.text_field :fullname %>
         <% form.object.errors.full_messages_for(:fullname).each do |message| %>
             <div><%= message %></div>
@@ -8,7 +8,7 @@
     </div>
     <br>
     <div>
-        <%= form.label :email %><br>
+        <%= form.label :email, "E-mail" %><br>
         <%= form.email_field :email %>
         <% form.object.errors.full_messages_for(:email).each do |message| %>
             <div><%= message %></div>
@@ -16,7 +16,7 @@
     </div>
     <br>
     <div>
-        <%= form.label :birthdate %><br>
+        <%= form.label :birthdate, "Data de nascimento" %><br>
         <%= form.date_field :birthdate %>
         <% form.object.errors.full_messages_for(:birthdate).each do |message| %>
             <div><%= message %></div>
@@ -24,7 +24,7 @@
     </div>
     <br>
     <div>
-        <%= form.label :cpf %><br>
+        <%= form.label :cpf, "CPF" %><br>
         <%= form.text_field :cpf %>
         <% form.object.errors.full_messages_for(:cpf).each do |message| %>
             <div><%= message %></div>
@@ -34,7 +34,7 @@
 
     <%= form.fields_for :address, @patient.address do |address_form| %>
         <div>
-            <%= address_form.label :cep %>
+            <%= address_form.label :cep, "CEP" %><br>
             <%= address_form.text_field :cep, value: address_form.object&.cep || '' %>
             <% address_form.object&.errors&.full_messages_for(:cep)&.each do |message| %>
             <div><%= message %></div>
@@ -42,7 +42,7 @@
         </div>
         <br>
         <div>
-            <%= address_form.label :city %>
+            <%= address_form.label :city, "Cidade" %><br>
             <%= address_form.text_field :city, value: address_form.object&.city || '' %>
             <% address_form.object&.errors&.full_messages_for(:city)&.each do |message| %>
             <div><%= message %></div>
@@ -50,7 +50,7 @@
         </div>
         <br>
         <div>
-            <%= address_form.label :neighborhood %>
+            <%= address_form.label :neighborhood, "Bairro" %><br>
             <%= address_form.text_field :neighborhood, value: address_form.object&.neighborhood || '' %>
             <% address_form.object&.errors&.full_messages_for(:neighborhood)&.each do |message| %>
             <div><%= message %></div>
@@ -58,7 +58,7 @@
         </div>
         <br>
         <div>
-            <%= address_form.label :street %>
+            <%= address_form.label :street, "Rua" %><br>
             <%= address_form.text_field :street, value: address_form.object&.street || '' %>
             <% address_form.object&.errors&.full_messages_for(:street)&.each do |message| %>
             <div><%= message %></div>
@@ -66,16 +66,16 @@
         </div>
         <br>
         <div>
-            <%= address_form.label :next %>
+            <%= address_form.label :next, "Complemento" %><br>
             <%= address_form.text_field :next, value: address_form.object&.next || '' %>
             <% address_form.object&.errors&.full_messages_for(:next)&.each do |message| %>
             <div><%= message %></div>
             <% end %>
         </div>
+        <br>
     <% end %>
 
     <div>
-        <%= link_to "Voltar", :back, class: "btn btn-secondary" %>
         <%= form.submit "Confirmar" %>
     </div>
 <% end %>
