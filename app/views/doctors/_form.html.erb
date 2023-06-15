@@ -34,6 +34,14 @@
     </div>
     <br>
     <div>
+        <%= form.label :crm %><br>
+        <%= form.text_field :crm %>
+        <% form.object.errors.full_messages_for(:crm).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
         <%= link_to "Voltar", :back, class: "btn btn-secondary" %>
         <%= form.submit "Confirmar" %>
     </div>

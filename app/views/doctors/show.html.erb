@@ -1,0 +1,23 @@
+<h1>Detalhes sobre o médico</h1>
+<%= link_to "Home", root_path %>
+<p>Nome completo: <%= @doctor.fullname %></p>
+
+<p>CPF: <%= @doctor.cpf %></p>
+
+<p>E-mail: <%= @doctor.email %></p>
+
+<p>Especialidade: <%= @doctor.specialty %></p>
+
+<p>CRM: <%= @doctor.crm %></p>
+
+<div>
+    <ul>
+        <li>
+            <%= link_to "Editar", edit_doctor_path(@doctor) %>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <%= link_to "Voltar", :back, class: "btn btn-secondary" %>
+</div>
