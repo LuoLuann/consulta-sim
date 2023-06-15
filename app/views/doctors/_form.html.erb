@@ -1,0 +1,40 @@
+
+
+<%= form_with model: @doctor do |form| %>
+    <div>
+        <%= form.label :fullname %><br>
+        <%= form.text_field :fullname %>
+        <% form.object.errors.full_messages_for(:fullname).each do |message| %>
+            <div> <%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
+        <%= form.label :cpf %><br>
+        <%= form.text_field :cpf %>
+        <% form.object.errors.full_messages_for(:cpf).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
+        <%= form.label :email %><br>
+        <%= form.text_field :email %>
+        <% form.object.errors.full_messages_for(:email).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
+        <%= form.label :specialty %><br>
+        <%= form.text_field :specialty %>
+        <% form.object.errors.full_messages_for(:specialty).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
+        <%= link_to "Voltar", :back, class: "btn btn-secondary" %>
+        <%= form.submit "Confirmar" %>
+    </div>
+<% end %>
