@@ -2,7 +2,7 @@ class CreatePatients < ActiveRecord::Migration[7.0]
   def change
     create_table :patients do |t|
       t.string :fullname
-      t.date :date_of_birth
+      t.date :birthdate
       t.string :cpf
       t.string :email
 

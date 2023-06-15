@@ -2,12 +2,12 @@
 
 one:
   fullname: MyString
-  date_of_birth: 2023-06-13
+  birthdate: 2023-06-13
   cpf: MyString
   email: MyString
 
 two:
   fullname: MyString
-  date_of_birth: 2023-06-13
+  birthdate: 2023-06-13
   cpf: MyString
   email: MyString

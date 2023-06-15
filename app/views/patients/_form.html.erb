@@ -16,9 +16,9 @@
     </div>
     <br>
     <div>
-        <%= form.label :date_of_birth %><br>
-        <%= form.date_field :date_of_birth %>
-        <% form.object.errors.full_messages_for(:date_of_birth).each do |message| %>
+        <%= form.label :birthdate %><br>
+        <%= form.date_field :birthdate %>
+        <% form.object.errors.full_messages_for(:birthdate).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>

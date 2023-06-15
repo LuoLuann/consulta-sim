@@ -5,7 +5,8 @@ class CreateAddresses < ActiveRecord::Migration[7.0]
       t.string :city
       t.string :street
       t.string :next
-      t.integer :patient_id
+      t.string :neighborhood
+      t.references :patient, foreign_key: true
       t.timestamps
     end
   end

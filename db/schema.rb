@@ -16,18 +16,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_055052) do
     t.string "city"
     t.string "street"
     t.string "next"
+    t.string "neighborhood"
+    t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "patient_id"
-    t.string "neighborhood"
     t.index ["patient_id"], name: "index_addresses_on_patient_id"
   end
 
   create_table "consultations", force: :cascade do |t|
     t.date "date"
     t.time "time"
+    t.integer "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_consultations_on_patient_id"
   end
 
   create_table "doctors", force: :cascade do |t|
@@ -42,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_055052) do
 
   create_table "patients", force: :cascade do |t|
     t.string "fullname"
-    t.date "date_of_birth"
+    t.date "birthdate"
     t.string "cpf"
     t.string "email"
     t.datetime "created_at", null: false
@@ -50,4 +52,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_055052) do
   end
 
   add_foreign_key "addresses", "patients"
+  add_foreign_key "consultations", "patients"
 end
