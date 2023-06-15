@@ -1,0 +1,13 @@
+
+<h1>Listar Médicos</h1>
+
+<ul>
+    <% @doctors.each do |doctor| %>
+        <li>
+            <a href="<%= doctor_path(doctor) %>">
+                <%= doctor.fullname %>
+            </a>
+        </li>
+    <% end %>
+</ul>
+<%= link_to "Voltar", root_path, class: "btn btn-secondary" %>
