@@ -9,5 +9,4 @@ class Patient < ApplicationRecord
   validates_date :birthdate, presence: { message: "A data de nascimento é obrigatória" } , on_or_before: lambda { Date.current }, on_or_after: lambda { 120.years.ago }
   validates :cpf, presence: true, uniqueness: true, lenght: { is: 11 }, numerically: ( only_integer: true, message: "O CPF deve conter apenas números" )
 
-
 end
