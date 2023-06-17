@@ -1,0 +1,76 @@
+<head>
+  <style>
+    <style>
+        .body {
+            margin: 0px;
+        }
+        .page-title {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .consultations-list {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+
+        .consultation-item {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .consultation-info {
+            margin: 0;
+        }
+        .btn {
+            margin-left: 300px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white; /* Defina a cor do texto como branco */
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn-custom:hover {
+            background-color: darkblue;
+        }
+
+
+    </style>
+
+</head>
+
+<h1 class="page-title">Consultas do Médico</h1>
+
+<div class="consultations-list">
+    <% @consultations.each  do |consultation| %>
+        <div class="consultation-item">
+            <p class="consultation-info"><%= consultation.date %>  às <%= consultation.time.strftime('%H:%M') %></p>
+            <p class="consultation-info">Paciente: <%= consultation.patient.fullname %></p>
+            <p class="consultation-info">Médico: <%= consultation.doctor.fullname %></p>
+        </div>
+    <% end %>
+</div>
+
+<%= link_to "Voltar", doctor_path(@doctor), class: "btn btn-custom" %>
+
+
