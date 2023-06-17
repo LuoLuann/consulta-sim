@@ -1,3 +1,85 @@
+<head>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            }
+
+        .details {
+            margin-bottom: 20px;
+            }
+
+        .details label {
+            font-weight: bold;
+            }
+
+        .details p {
+            margin: 5px 0;
+            }
+
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+            }
+
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            }
+
+        .button-container a:hover {
+            background-color: darkblue;
+            }
+        .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white; /* Defina a cor do texto como branco */
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .btn-custom:hover {
+            background-color: darkblue;
+        }
+        .btn-home {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn-home:hover {
+            background-color: darkblue;
+        }
+
+    </style>
+</head>
+
+
 <h1>Detalhes sobre o paciente</h1>
 <%= link_to "Home", root_path %>
 <p>Nome: <%= @patient.fullname %></p>

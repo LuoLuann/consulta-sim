@@ -1,26 +1,108 @@
-<h1>Detalhes sobre o médico</h1>
-<%= link_to "Home", root_path %>
-<p>Nome completo: <%= @doctor.fullname %></p>
+<head>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            }
 
-<p>CPF: <%= @doctor.cpf %></p>
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            }
 
-<p>E-mail: <%= @doctor.email %></p>
+        .details {
+            margin-bottom: 20px;
+            }
 
-<p>Especialidade: <%= @doctor.specialty %></p>
+        .details label {
+            font-weight: bold;
+            }
 
-<p>CRM: <%= @doctor.crm %></p>
+        .details p {
+            margin: 5px 0;
+            }
 
-<div>
-    <ul>
-        <li>
-            <%= link_to "Editar", edit_doctor_path(@doctor) %>
-        </li>
-        <li>
-            <%= link_to "Consultas", consultations_doctor_path(@doctor) %>
-        </li>
-    </ul>
-</div>
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+            }
 
-<div>
-    <%= link_to "Voltar", doctors_path, class: "btn btn-secondary" %>
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            }
+
+        .button-container a:hover {
+            background-color: darkblue;
+            }
+        .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white; /* Defina a cor do texto como branco */
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .btn-custom:hover {
+            background-color: darkblue;
+        }
+        .btn-home {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn-home:hover {
+            background-color: darkblue;
+        }
+
+    </style>
+</head>
+
+<div class="container">
+    <h1>Detalhes sobre o médico</h1>
+
+    <div class="details">
+        <%= link_to "Home", root_path%>
+        <p>Nome completo: <%= @doctor.fullname %></p>
+
+        <p>CPF: <%= @doctor.cpf %></p>
+
+        <p>E-mail: <%= @doctor.email %></p>
+
+        <p>Especialidade: <%= @doctor.specialty %></p>
+
+        <p>CRM: <%= @doctor.crm %></p>
+    </div>
+
+    <div class="button-container">
+
+        <%= link_to "Editar", edit_doctor_path(@doctor) %>
+        <%= link_to "Consultas", consultations_doctor_path(@doctor) %>
+
+    </div>
+
+    <%= link_to "Voltar", doctors_path, class: "btn btn-custom" %>
+
+
 </div>
