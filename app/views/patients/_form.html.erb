@@ -17,7 +17,7 @@
     <br>
     <div>
         <%= form.label :birthdate, "Data de nascimento" %><br>
-        <%= form.date_select(:data_nascimento, :start_year => 1900, :end_year: Date.current.year)%>
+        <%= form.date_select(:birthdate, :start_year=> 1900, :end_year=> Date.current.year) %>
         <% form.object.errors.full_messages_for(:birthdate).each do |message| %>
             <div><%= message %></div>
         <% end %>
