@@ -8,12 +8,14 @@
   </div>
   <br>
   <div>
-    <%= form.label :date %><br>
-    <%= form.date_field :date %>
-    <% form.object.errors.full_messages_for(:date).each do |message| %>
-            <div><%= message %></div>
-    <% end %>
-  </div>
+  <%= form.label :date %><br>
+  <%= form.date_select(:date, start_month: Date.current.month, end_month: Date.current.month + 4, discard_year: true) %>
+  <% form.object.errors.full_messages_for(:date).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+</div>
+
+
   <br>
   <div>
     <%= form.label :time %><br>
