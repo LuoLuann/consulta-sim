@@ -5,7 +5,6 @@ class CreatePatients < ActiveRecord::Migration[7.0]
       t.date :birthdate
       t.string :cpf
       t.string :email
-
       t.timestamps
     end
   end

@@ -1,4 +1,28 @@
+<style>
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-custom {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white; /* Defina a cor do texto como branco */
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    .btn-custom:hover {
+        background-color: darkblue;
+    }
+</style>
 <h1>Cadastrar Paciente</h1>
 
 <%= render partial: "form", locals: { patient: @patient } %>
-<%= link_to "Voltar", root_path, class: "btn btn-secondary" %>
+<%= link_to "Voltar", root_path, class: "btn-custom" %>

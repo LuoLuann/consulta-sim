@@ -1,9 +1,58 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  h2 {
+    color: #333;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: #fff;
+  }
+
+  .menu li {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .menu li:hover {
+    background-color: #555;
+  }
+
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    text-decoration: underline;
+  }
+</style>
+
 <h1>Bem-vindo ao Sistema de Gerenciamento de Consultas</h1>
 
-<p>Este sistema permite que você gerencie pacientes, médicos e consultas.</p>
-
-<h2>Funcionalidades:</h2>
-<ul>
+<h2>Funcionalidades</h2>
+<ul class="menu">
   <li><%= link_to "Cadastrar Paciente", new_patient_path %></li>
   <li><%= link_to "Listar Todos Pacientes", patients_path %></li>
   <li><%= link_to "Cadastrar Médico", new_doctor_path %></li>

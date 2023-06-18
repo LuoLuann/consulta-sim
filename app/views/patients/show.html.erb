@@ -63,47 +63,48 @@
         .btn-custom:hover {
             background-color: darkblue;
         }
-        .btn-home {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: blue;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-
-        .btn-home:hover {
-            background-color: darkblue;
-        }
 
     </style>
 </head>
 
+<div class="container">
+    <h1>Detalhes sobre o paciente</h1>
+    <div class="details">
+        <%= link_to "Home", root_path, class: "btn btn-custom" %>
+        <br><br>
+        <p>Nome: <%= @patient.fullname %></p>
 
-<h1>Detalhes sobre o paciente</h1>
-<%= link_to "Home", root_path %>
-<p>Nome: <%= @patient.fullname %></p>
+        <p>Data de nascimento: <%= @patient.birthdate %></p>
 
-<p>Data de nascimento: <%= @patient.birthdate %></p>
+        <p>CPF: <%= @patient.cpf %></p>
 
-<p>CPF: <%= @patient.cpf %></p>
+        <p>Email: <%= @patient.email %></p>
 
-<p>Email: <%= @patient.email %></p>
+        <h2>Endereço</h2>
+        <p>CEP: <%= @patient.address.cep %></p>
 
-<div>
-    <ul>
-        <li>
-            <%= link_to "Editar", edit_patient_path(@patient) %>
-        </li>
-        <li>
-            <%= link_to 'Agendar Consulta', new_patient_consultation_path(@patient) %>
-        </li>
-        <li>
-            <%= link_to "Listar Consultas", patient_consultation_path(@patient) %>
-        </li>
-    </ul>
+        <p>Cidade: <%= @patient.address.city %></p>
+
+        <p>Bairro: <%= @patient.address.neighborhood %></p>
+
+        <p>Rua: <%= @patient.address.street %></p>
+
+        <p>Próximo: <%= @patient.address.next %></p>
+    </div>
+
+    <div class="button-container">
+        <%= link_to "Editar", edit_patient_path(@patient) %>
+
+        <%= link_to 'Editar Endereço', edit_address_patient_path(@patient) %>
+
+        <%= link_to 'Agendar Consulta', new_patient_consultation_path(@patient) %>
+
+        <%= link_to "Listar Consultas", patient_consultation_path(@patient) %>
+
+    </div>
+
+    <%= link_to "Voltar", patients_path, class: "btn btn-custom" %>
+
 </div>
-<div>
-    <%= link_to "Voltar", patients_path, class: "btn btn-secondary" %>
-</div>
+
 

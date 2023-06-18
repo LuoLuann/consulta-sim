@@ -1,8 +1,64 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+
+  .error-message {
+    color: #ff0000;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #555;
+  }
+</style>
 
 
 <%= form_with model: @doctor do |form| %>
     <div>
-        <%= form.label :fullname %><br>
+        <%= form.label :fullname, "Nome completo" %><br>
         <%= form.text_field :fullname %>
         <% form.object.errors.full_messages_for(:fullname).each do |message| %>
             <div> <%= message %></div>
@@ -10,7 +66,7 @@
     </div>
     <br>
     <div>
-        <%= form.label :cpf %><br>
+        <%= form.label :cpf, "CPF" %><br>
         <%= form.text_field :cpf %>
         <% form.object.errors.full_messages_for(:cpf).each do |message| %>
             <div><%= message %></div>
@@ -18,7 +74,7 @@
     </div>
     <br>
     <div>
-        <%= form.label :email %><br>
+        <%= form.label :email, "E-mail" %><br>
         <%= form.text_field :email %>
         <% form.object.errors.full_messages_for(:email).each do |message| %>
             <div><%= message %></div>
@@ -26,7 +82,7 @@
     </div>
     <br>
     <div>
-        <%= form.label :specialty %><br>
+        <%= form.label :specialty, "Especialidade" %><br>
         <%= form.text_field :specialty %>
         <% form.object.errors.full_messages_for(:specialty).each do |message| %>
             <div><%= message %></div>
@@ -34,7 +90,7 @@
     </div>
     <br>
     <div>
-        <%= form.label :crm %><br>
+        <%= form.label :crm, "CRM" %><br>
         <%= form.text_field :crm %>
         <% form.object.errors.full_messages_for(:crm).each do |message| %>
             <div><%= message %></div>
