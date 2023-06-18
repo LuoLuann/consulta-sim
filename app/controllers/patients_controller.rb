@@ -27,7 +27,6 @@ class PatientsController < ApplicationController
 
   def edit
     @patient = Patient.find(params[:id])
-    @address = @patient.build_address
   end
 
   def update
@@ -35,7 +34,23 @@ class PatientsController < ApplicationController
     if @patient.update(patient_params)
       redirect_to @patient
     else
-      render :edit,status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def edit_address
+    @patient = Patient.find(params[:id])
+    @address = @patient.address
+  end
+
+  def update_address
+    @patient = Patient.find(params[:id])
+    @address = @patient.address
+
+    if @address.update(address_params)
+      redirect_to @patient, notice: "Endereço atualizado com sucesso."
+    else
+      render :edit_address, status: :unprocessable_entity
     end
   end
 
@@ -46,8 +61,12 @@ class PatientsController < ApplicationController
   # end
 
   private
-    def patient_params
-      params.require(:patient).permit(:fullname, :birthdate, :cpf, :email, address_attributes: [:cep, :city, :neighborhood, :street, :next])
-    end
 
+  def patient_params
+    params.require(:patient).permit(:fullname, :birthdate, :cpf, :email, address_attributes: [:cep, :city, :neighborhood, :street, :next])
+  end
+
+  def address_params
+    params.require(:address).permit(:cep, :city, :neighborhood, :street, :next)
+  end
 end
