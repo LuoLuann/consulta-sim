@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :patients do
     resources :consultations
+    member do
+      get 'edit_address'
+      patch 'update_address'
+    end
   end
   resources :doctors do
     get 'consultations', on: :member

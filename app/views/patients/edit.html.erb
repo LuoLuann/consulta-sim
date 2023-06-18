@@ -1,3 +1,40 @@
 <h1>Editar Paciente</h1>
 
-<%= render "form", patient: @patient, address: @address %>
+<%= form_with model: @patient do |form| %>
+    <div>
+        <%= form.label :fullname, "Nome completo" %><br>
+        <%= form.text_field :fullname %>
+        <% form.object.errors.full_messages_for(:fullname).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
+        <%= form.label :email, "E-mail" %><br>
+        <%= form.email_field :email %>
+        <% form.object.errors.full_messages_for(:email).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
+        <%= form.label :birthdate, "Data de nascimento" %><br>
+        <%= form.date_select(:birthdate, :start_year=> 1900, :end_year=> Date.current.year) %>
+        <% form.object.errors.full_messages_for(:birthdate).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+    <div>
+        <%= form.label :cpf, "CPF" %><br>
+        <%= form.text_field :cpf %>
+        <% form.object.errors.full_messages_for(:cpf).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+    <br>
+
+    <div>
+        <%= form.submit "Confirmar" %>
+    </div>
+<% end %>
