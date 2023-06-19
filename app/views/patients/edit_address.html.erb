@@ -84,29 +84,44 @@
   <div class="field">
     <%= form.label :cep %> <br>
     <%= form.text_field :cep %>
+    <% form.object&.errors&.full_messages_for(:cep)&.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
     <br>
   <div class="field">
     <%= form.label :city %> <br>
     <%= form.text_field :city %>
+    <% form.object&.errors&.full_messages_for(:city)&.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
     <br>
 
   <div class="field">
     <%= form.label :neighborhood %><br>
     <%= form.text_field :neighborhood %>
+    <% form.object&.errors&.full_messages_for(:neighborhood)&.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
     <br>
 
   <div class="field">
     <%= form.label :street %><br>
     <%= form.text_field :street %>
+    <% form.object&.errors&.full_messages_for(:street)&.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
     <br>
 
   <div class="field">
     <%= form.label :next %><br>
     <%= form.text_field :next %>
+    <% form.object&.errors&.full_messages_for(:next)&.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
     <br>
 
