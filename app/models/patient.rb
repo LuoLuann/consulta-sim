@@ -1,9 +1,9 @@
 class Patient < ApplicationRecord
-  has_one :address
+  has_one :address, dependent: :destroy
   accepts_nested_attributes_for :address
   validates_associated :address
 
-  has_many :consultations
+  has_many :consultations, dependent: :destroy
 
   validates :fullname, presence: true, length: { minimum: 10, maximum: 255}, format: { with: /\A[a-zA-Z\s]+\z/, message: "Deve conter apenas letras" }
   validates :email, presence: { message: " é obrigatório"}, uniqueness: { message: " já está em uso" }, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, message: " possui um formato inválido" }

@@ -11,7 +11,6 @@ class ConsultationsController < ApplicationController
   def create
     @patient = Patient.find(params[:patient_id])
     @consultation = @patient.consultations.build(consultation_params)
-    puts @patient # Exibe os parâmetros no console
     if @consultation.save
       redirect_to @patient
     else
