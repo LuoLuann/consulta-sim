@@ -101,6 +101,8 @@
 
         <%= link_to "Listar Consultas", patient_consultation_path(@patient) %>
 
+       <%= button_to "Deletar", @patient, method: :delete %>
+
     </div>
 
     <%= link_to "Voltar", patients_path, class: "btn btn-custom" %>

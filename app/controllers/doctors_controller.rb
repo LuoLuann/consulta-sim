@@ -34,6 +34,13 @@ class DoctorsController < ApplicationController
     end
   end
 
+  def destroy
+    @doctor = Doctor.find(params[:id])
+    @doctor.destroy
+
+    redirect_to doctors_path, status: :see_other, notice: "doctor was successfully destroyed."
+  end
+
   def consultations
     @doctor =Doctor.find(params[:id])
     @consultations = @doctor.consultations

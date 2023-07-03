@@ -26,6 +26,7 @@
       <p class="consultation-info">Médico: <%= consultation.doctor.fullname %></p>
       <p class="consultation-info">Data: <%= consultation.date %></p>
       <p class="consultation-info">Hora: <%= consultation.time.strftime('%H:%M') %></p>
+      <%= button_to "Deletar", patient_consultation_path(@patient, consultation), method: :delete%>
     </div>
   <% end %>
 </div>

@@ -96,10 +96,9 @@
     </div>
 
     <div class="button-container">
-
         <%= link_to "Editar", edit_doctor_path(@doctor) %>
         <%= link_to "Consultas", consultations_doctor_path(@doctor) %>
-
+        <%= button_to "Deletar", @doctor, method: :delete %>
     </div>
 
     <%= link_to "Voltar", doctors_path, class: "btn btn-custom" %>

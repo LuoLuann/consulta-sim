@@ -23,16 +23,18 @@ class ConsultationsController < ApplicationController
     @consultations = @patient.consultations
   end
 
+  def destroy
+    @patient = Patient.find(params[:patient_id])
+    @consultation = @patient.consultations.find(params[:id])
+    @consultation.destroy
+
+    redirect_to patient_path(@patient), notice: "A consulta foi removida com sucesso."
+  end
+
   private
   def consultation_params
     params.require(:consultation).permit(:patient_id, :doctor_id, :date, :time)
   end
+
 end
-
-
-  # def edit
-  # end
-
-  # def update
-  # end
 

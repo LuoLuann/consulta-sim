@@ -54,11 +54,12 @@ class PatientsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @patient = Patient.find(params[:id])
-  #   @patient.destroy
-  #   redirect_to patient_path, status: :see_other
-  # end
+  def destroy
+    @patient = Patient.find(params[:id])
+    @patient.destroy
+
+    redirect_to patients_path, status: :see_other, notice: "patient was successfully destroyed."
+  end
 
   private
 
