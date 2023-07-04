@@ -1,7 +1,7 @@
 Feature: editar um paciente
     As a paciente
-    I want to poder editar minhas informaçoes
-    So that atualizar dados pessoais e corrigir informaçoes incorretas ou desatualizadas
+    I want to poder editar minhas informacoes
+    So that atualizar dados pessoais e corrigir informacoes incorretas ou desatualizadas
 
 # Cenário sem erro
   Scenario: editar email de paciente
