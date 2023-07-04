@@ -19,7 +19,7 @@ When('eu clico em editar o medico e atualizo especialidade para {string}') do |s
   click_button 'Confirmar'
 end
 
-Then('eu recebo uma mensagem que avisa que o medico com crm {int} foi atualizado') do |crm|
+Then('eu volto para tela do medico com crm {int} foi atualizado') do |crm|
   expect(page).to have_content(crm)
 end
 
