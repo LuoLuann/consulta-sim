@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  fullname: MyString
-  cpf: MyString
-  email: MyString
-  specialty: MyString
-  crm: 1
+  fullname: Tony Tony Chopper
+  cpf: 11111111111
+  email: chopper@gmail.com
+  specialty: Maior médico do mundo
+  crm: 123456
 
 two:
-  fullname: MyString
-  cpf: MyString
-  email: MyString
+  fullname: Doctor who
+  cpf: 22222222222
+  email: who@gmail.com
   specialty: MyString
-  crm: 1
+  crm: 112345
